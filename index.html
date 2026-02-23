@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SYNAPSEAR — Interface neurale auditive de nouvelle génération. Rejoignez la liste prioritaire." />
+  <meta name="theme-color" content="#0a0a0f" />
+  <title>SYNAPSEAR — Entendre autrement</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Polices premium via Google Fonts (CDN optionnel, fallback inclus) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+  <header class="nav" id="nav" role="banner">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo" aria-label="SYNAPSEAR — Accueil">
+        <span class="logo-mark" aria-hidden="true"></span>
+        SYNAPSEAR
+      </a>
+      <nav aria-label="Navigation principale">
+        <ul class="nav__links">
+          <li><a href="#probleme">Problème</a></li>
+          <li><a href="#solution">Solution</a></li>
+          <li><a href="#benefices">Bénéfices</a></li>
+          <li><a href="#prix">Accès</a></li>
+          <li><a href="#waitlist" class="nav__cta">Liste prioritaire</a></li>
+        </ul>
+      </nav>
+      <button class="nav__burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobile-menu" hidden>
+      <a href="#probleme">Problème</a>
+      <a href="#solution">Solution</a>
+      <a href="#benefices">Bénéfices</a>
+      <a href="#comparaison">Comparaison</a>
+      <a href="#prix">Accès</a>
+      <a href="#faq">FAQ</a>
+      <a href="#waitlist" class="nav__cta">Liste prioritaire</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="halo halo--1"></div>
+        <div class="halo halo--2"></div>
+        <div class="halo halo--3"></div>
+        <canvas class="neural-canvas" id="neuralCanvas" aria-hidden="true"></canvas>
+      </div>
+
+      <div class="hero__content">
+        <div class="hero__badge">
+          <span class="badge__dot" aria-hidden="true"></span>
+          Accès anticipé · Candidatures ouvertes
+        </div>
+        <h1 class="hero__title" id="hero-title">
+          <span class="line line--1">L'audition</span>
+          <span class="line line--2">réinventée</span>
+          <span class="line line--3">au niveau neuronal.</span>
+        </h1>
+        <p class="hero__sub">
+          SYNAPSEAR est une interface d'écoute bio-adaptative qui apprend la cartographie
+          auditive unique de chaque utilisateur — pour restituer un son d'une précision
+          jusqu'ici réservée à la recherche clinique.
+        </p>
+        <p class="hero__disclaimer">
+          Objectifs produit en cours de validation expérimentale.
+        </p>
+        <div class="hero__actions">
+          <a href="#waitlist" class="btn btn--primary">Rejoindre la liste prioritaire</a>
+          <a href="#solution" class="btn btn--ghost">Découvrir →</a>
+        </div>
+        <div class="hero__stats" role="list">
+          <div class="stat" role="listitem">
+            <span class="stat__num">2 400</span>
+            <span class="stat__label">Personnes en liste d'attente</span>
+          </div>
+          <div class="stat__sep" aria-hidden="true"></div>
+          <div class="stat" role="listitem">
+            <span class="stat__num">12</span>
+            <span class="stat__label">Pays représentés</span>
+          </div>
+          <div class="stat__sep" aria-hidden="true"></div>
+          <div class="stat" role="listitem">
+            <span class="stat__num">Q3 2025</span>
+            <span class="stat__label">Lancement bêta prévu</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <div class="device">
+          <div class="device__ring device__ring--1"></div>
+          <div class="device__ring device__ring--2"></div>
+          <div class="device__ring device__ring--3"></div>
+          <div class="device__core">
+            <div class="device__pulse"></div>
+            <svg class="device__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="24" cy="24" r="10" stroke="url(#iconGrad)" stroke-width="1.5"/>
+              <path d="M24 8 C24 8, 36 14, 36 24 C36 34, 24 40, 24 40 C24 40, 12 34, 12 24 C12 14, 24 8, 24 8Z" stroke="url(#iconGrad)" stroke-width="1" stroke-dasharray="3 3" fill="none"/>
+              <circle cx="24" cy="24" r="3" fill="url(#iconGrad)"/>
+              <defs>
+                <linearGradient id="iconGrad" x1="12" y1="8" x2="36" y2="40" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#60a5fa"/>
+                  <stop offset="100%" stop-color="#a78bfa"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <a href="#probleme" class="hero__scroll" aria-label="Défiler vers la section suivante">
+        <span class="scroll__dot"></span>
+      </a>
+    </section>
+
+    <!-- ═══════════════════════════ PROBLÈME ═══════════════════════════ -->
+    <section class="section section--problem" id="probleme" aria-labelledby="prob-title">
+      <div class="container">
+        <div class="section__label">Le problème</div>
+        <h2 class="section__title" id="prob-title">
+          L'oreille humaine mérite<br/>mieux que l'analogique.
+        </h2>
+        <p class="section__intro">
+          Depuis quarante ans, les technologies audio grand public n'ont pas fondamentalement
+          évolué. Elles amplifient, filtrent et compressent — sans jamais s'adapter
+          à la biologie de l'utilisateur.
+        </p>
+
+        <div class="cards cards--3">
+          <article class="card card--glow" aria-label="Fatigue auditive">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none"><path d="M16 4 C16 4 26 10 26 18 C26 23 21.5 27 16 27 C10.5 27 6 23 6 18 C6 10 16 4 16 4Z" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="16" y1="18" x2="16" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="card__title">Fatigue auditive chronique</h3>
+            <p class="card__text">L'écoute prolongée dans des environnements non-adaptés génère une charge cognitive mesurable, souvent ignorée.</p>
+          </article>
+          <article class="card card--glow" aria-label="Perte de nuance">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M10 16 Q13 12 16 16 Q19 20 22 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+            </div>
+            <h3 class="card__title">Perte de nuance sonore</h3>
+            <p class="card__text">Les équipements actuels traitent le son de façon universelle, ignorant que chaque oreille perçoit différemment.</p>
+          </article>
+          <article class="card card--glow" aria-label="Fragmentation">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none"><rect x="6" y="6" width="8" height="8" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="18" y="6" width="8" height="8" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="6" y="18" width="8" height="8" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="18" y="18" width="8" height="8" rx="1" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <h3 class="card__title">Expérience fragmentée</h3>
+            <p class="card__text">Applications, casques, égaliseurs — des couches technologiques superposées qui n'interagissent pas entre elles.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ SOLUTION ═══════════════════════════ -->
+    <section class="section section--solution" id="solution" aria-labelledby="sol-title">
+      <div class="container">
+        <div class="split">
+          <div class="split__text">
+            <div class="section__label">La solution</div>
+            <h2 class="section__title" id="sol-title">
+              Une interface qui<br/>apprend votre audition.
+            </h2>
+            <p class="section__body">
+              SYNAPSEAR combine un module matériel ultra-compact et un algorithme
+              d'apprentissage continu pour créer un profil auditif unique —
+              mis à jour en temps réel à chaque session d'écoute.
+            </p>
+            <p class="section__body">
+              Le système identifie vos seuils de perception, vos préférences spectrales
+              et votre réponse à la dynamique, puis modélise un filtre personnalisé
+              qui évolue avec vous.
+            </p>
+            <p class="disclaimer-inline">Objectifs produit à valider expérimentalement.</p>
+            <a href="#waitlist" class="btn btn--primary">Accès anticipé</a>
+          </div>
+          <div class="split__visual" aria-hidden="true">
+            <div class="waveform">
+              <div class="waveform__bars" id="waveformBars" role="img" aria-label="Visualisation de l'onde sonore personnalisée"></div>
+              <div class="waveform__label">Profil auditif adaptatif — simulation</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pillars">
+          <div class="pillar">
+            <span class="pillar__num">01</span>
+            <h3 class="pillar__title">Écoute initiale</h3>
+            <p>Une session de calibration de 4 minutes établit votre empreinte auditive de base.</p>
+          </div>
+          <div class="pillar">
+            <span class="pillar__num">02</span>
+            <h3 class="pillar__title">Apprentissage continu</h3>
+            <p>L'algorithme affine le modèle à chaque heure d'écoute, sans action de votre part.</p>
+          </div>
+          <div class="pillar">
+            <span class="pillar__num">03</span>
+            <h3 class="pillar__title">Restitution précise</h3>
+            <p>Le filtre personnalisé est appliqué en temps réel, avec une latence cible inférieure à 2 ms.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ BÉNÉFICES ═══════════════════════════ -->
+    <section class="section section--benefits" id="benefices" aria-labelledby="ben-title">
+      <div class="container">
+        <div class="section__label">Bénéfices</div>
+        <h2 class="section__title" id="ben-title">Ce que vous ressentez,<br/>pas ce que nous promettons.</h2>
+        <p class="section__intro">
+          Les retours de nos 80 testeurs bêta internes convergent autour de quatre ressentis récurrents.
+          Ces résultats sont subjectifs et devront être confirmés par une étude contrôlée.
+        </p>
+
+        <div class="benefits-grid">
+          <article class="benefit" aria-label="Bénéfice 1">
+            <div class="benefit__bar" style="--pct: 87%"></div>
+            <div class="benefit__body">
+              <div class="benefit__score">87 <span>%</span></div>
+              <h3 class="benefit__title">Réduction de la fatigue perçue</h3>
+              <p>des testeurs ont rapporté une sensation de fatigue auditive moindre après 2 semaines d'utilisation.</p>
+            </div>
+          </article>
+          <article class="benefit" aria-label="Bénéfice 2">
+            <div class="benefit__bar" style="--pct: 94%"></div>
+            <div class="benefit__body">
+              <div class="benefit__score">94 <span>%</span></div>
+              <h3 class="benefit__title">Clarté vocale améliorée</h3>
+              <p>estiment distinguer plus nettement la parole en environnement bruité. Données subjectives.</p>
+            </div>
+          </article>
+          <article class="benefit" aria-label="Bénéfice 3">
+            <div class="benefit__bar" style="--pct: 79%"></div>
+            <div class="benefit__body">
+              <div class="benefit__score">79 <span>%</span></div>
+              <h3 class="benefit__title">Engagement musical accru</h3>
+              <p>ont décrit une écoute musicale "plus immersive et détaillée" qu'avec leur équipement habituel.</p>
+            </div>
+          </article>
+          <article class="benefit" aria-label="Bénéfice 4">
+            <div class="benefit__bar" style="--pct: 91%"></div>
+            <div class="benefit__body">
+              <div class="benefit__score">91 <span>%</span></div>
+              <h3 class="benefit__title">Adoption spontanée</h3>
+              <p>utilisent SYNAPSEAR comme interface principale après la première semaine d'essai.</p>
+            </div>
+          </article>
+        </div>
+        <p class="disclaimer-inline" style="text-align:center; margin-top:2rem;">
+          Données issues de 80 participants — étude interne non publiée. À valider expérimentalement.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ COMPARAISON ═══════════════════════════ -->
+    <section class="section section--compare" id="comparaison" aria-labelledby="comp-title">
+      <div class="container">
+        <div class="section__label">Comparaison</div>
+        <h2 class="section__title" id="comp-title">Ce qui existe.<br/>Ce que nous construisons.</h2>
+
+        <div class="compare-table" role="table" aria-label="Comparaison des technologies audio">
+          <div class="compare-table__head" role="row">
+            <div role="columnheader">Fonctionnalité</div>
+            <div role="columnheader">Casques premium</div>
+            <div role="columnheader">Apps d'audiologie</div>
+            <div role="columnheader" class="col--highlight">SYNAPSEAR</div>
+          </div>
+          <div class="compare-table__body">
+            <div class="compare-row" role="row">
+              <div role="cell">Profil auditif personnalisé</div>
+              <div role="cell"><span class="icon--no" aria-label="Non">✕</span></div>
+              <div role="cell"><span class="icon--partial" aria-label="Partiel">◑</span></div>
+              <div role="cell" class="col--highlight"><span class="icon--yes" aria-label="Oui">✓</span></div>
+            </div>
+            <div class="compare-row" role="row">
+              <div role="cell">Apprentissage continu</div>
+              <div role="cell"><span class="icon--no" aria-label="Non">✕</span></div>
+              <div role="cell"><span class="icon--no" aria-label="Non">✕</span></div>
+              <div role="cell" class="col--highlight"><span class="icon--yes" aria-label="Oui">✓</span></div>
+            </div>
+            <div class="compare-row" role="row">
+              <div role="cell">Latence < 2 ms (objectif)</div>
+              <div role="cell"><span class="icon--partial" aria-label="Partiel">◑</span></div>
+              <div role="cell"><span class="icon--no" aria-label="Non">✕</span></div>
+              <div role="cell" class="col--highlight"><span class="icon--yes" aria-label="Oui (objectif)">✓</span></div>
+            </div>
+            <div class="compare-row" role="row">
+              <div role="cell">Compatibilité universelle</div>
+              <div role="cell"><span class="icon--no" aria-label="Non">✕</span></div>
+              <div role="cell"><span class="icon--partial" aria-label="Partiel">◑</span></div>
+              <div role="cell" class="col--highlight"><span class="icon--yes" aria-label="Oui">✓</span></div>
+            </div>
+            <div class="compare-row" role="row">
+              <div role="cell">Sans abonnement obligatoire</div>
+              <div role="cell"><span class="icon--yes" aria-label="Oui">✓</span></div>
+              <div role="cell"><span class="icon--no" aria-label="Non">✕</span></div>
+              <div role="cell" class="col--highlight"><span class="icon--yes" aria-label="Oui">✓</span></div>
+            </div>
+            <div class="compare-row" role="row">
+              <div role="cell">Données stockées localement</div>
+              <div role="cell"><span class="icon--partial" aria-label="Partiel">◑</span></div>
+              <div role="cell"><span class="icon--no" aria-label="Non">✕</span></div>
+              <div role="cell" class="col--highlight"><span class="icon--yes" aria-label="Oui">✓</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="disclaimer-inline" style="text-align:center; margin-top:1.5rem;">Comparaison basée sur les spécifications publiques disponibles. Fonctionnalités SYNAPSEAR sous réserve de validation.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ PRIX ═══════════════════════════ -->
+    <section class="section section--pricing" id="prix" aria-labelledby="price-title">
+      <div class="container">
+        <div class="section__label">Accès</div>
+        <h2 class="section__title" id="price-title">Simple, transparent,<br/>sans surprise.</h2>
+
+        <div class="pricing-grid">
+          <article class="pricing-card" aria-label="Offre Liste prioritaire">
+            <div class="pricing-card__badge">Disponible maintenant</div>
+            <h3 class="pricing-card__name">Liste Prioritaire</h3>
+            <div class="pricing-card__price">
+              <span class="price__amount">Gratuit</span>
+            </div>
+            <ul class="pricing-card__features" role="list">
+              <li>Accès bêta en avant-première</li>
+              <li>Tarif fondateur réservé</li>
+              <li>Mises à jour exclusives du projet</li>
+              <li>Influence sur les fonctionnalités</li>
+              <li>Priorité de livraison au lancement</li>
+            </ul>
+            <a href="#waitlist" class="btn btn--primary" style="width:100%">Rejoindre maintenant</a>
+          </article>
+
+          <article class="pricing-card pricing-card--featured" aria-label="Offre Fondateur">
+            <div class="pricing-card__badge pricing-card__badge--glow">Tarif fondateur · Prix indicatif</div>
+            <h3 class="pricing-card__name">Accès Fondateur</h3>
+            <div class="pricing-card__price">
+              <span class="price__original">299 €</span>
+              <span class="price__amount">199 €</span>
+              <span class="price__note">Prix indicatif — réservé aux inscrits</span>
+            </div>
+            <ul class="pricing-card__features" role="list">
+              <li>Module SYNAPSEAR Gen 1</li>
+              <li>Licence perpétuelle sans abonnement</li>
+              <li>12 mois de mises à jour algorithmiques</li>
+              <li>Support prioritaire</li>
+              <li>Badge Fondateur dans l'application</li>
+              <li>Accès au programme de référence</li>
+            </ul>
+            <a href="#waitlist" class="btn btn--primary" style="width:100%">Réserver ma place</a>
+            <p class="pricing-card__disclaimer">Prix indicatif. Confirmation à l'ouverture commerciale.</p>
+          </article>
+
+          <article class="pricing-card" aria-label="Offre Studio">
+            <div class="pricing-card__badge">Prochainement</div>
+            <h3 class="pricing-card__name">Studio Pro</h3>
+            <div class="pricing-card__price">
+              <span class="price__amount">Sur devis</span>
+            </div>
+            <ul class="pricing-card__features" role="list">
+              <li>Licences multi-utilisateurs</li>
+              <li>API d'intégration</li>
+              <li>Tableau de bord analytique</li>
+              <li>Support dédié</li>
+              <li>Formation équipe incluse</li>
+            </ul>
+            <a href="#waitlist" class="btn btn--ghost" style="width:100%">Nous contacter</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ FAQ ═══════════════════════════ -->
+    <section class="section section--faq" id="faq" aria-labelledby="faq-title">
+      <div class="container container--narrow">
+        <div class="section__label">FAQ</div>
+        <h2 class="section__title" id="faq-title">Les questions<br/>que vous vous posez.</h2>
+
+        <div class="faq-list" role="list">
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__q" aria-expanded="false" aria-controls="faq-1">
+              <span>SYNAPSEAR fonctionne-t-il avec mes écouteurs actuels ?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a" id="faq-1" hidden>
+              Oui. SYNAPSEAR est conçu comme une couche intermédiaire universelle, compatible avec tout équipement audio à jack 3,5 mm ou Bluetooth. Il ne remplace pas vos écouteurs — il les améliore.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__q" aria-expanded="false" aria-controls="faq-2">
+              <span>Mes données auditives sont-elles partagées ?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a" id="faq-2" hidden>
+              Non. Le profil auditif est stocké localement sur l'appareil. Aucune donnée biométrique ne transite sur nos serveurs sans votre consentement explicite. La confidentialité est une valeur fondamentale du projet.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__q" aria-expanded="false" aria-controls="faq-3">
+              <span>Quand la bêta sera-t-elle disponible ?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a" id="faq-3" hidden>
+              Nous ciblons un accès bêta pour Q3 2025, réservé aux inscrits en liste prioritaire. Cette date est indicative et dépend de nos jalons de développement matériel et logiciel. Vous serez informés en priorité de tout changement.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__q" aria-expanded="false" aria-controls="faq-4">
+              <span>Est-ce un produit médical ou audiologique ?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a" id="faq-4" hidden>
+              Non. SYNAPSEAR est un produit grand public de bien-être auditif. Il n'est pas destiné à diagnostiquer, traiter ou corriger une pathologie auditive. Pour tout trouble clinique, consultez un audiologiste ou ORL qualifié.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__q" aria-expanded="false" aria-controls="faq-5">
+              <span>Puis-je annuler ma réservation fondateur ?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a" id="faq-5" hidden>
+              Oui, à tout moment avant la confirmation commerciale. L'inscription en liste prioritaire est entièrement gratuite et sans engagement. Le prépaiement fondateur, quand il ouvrira, inclura une période de rétractation complète.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-item__q" aria-expanded="false" aria-controls="faq-6">
+              <span>SYNAPSEAR convient-il aux musiciens professionnels ?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a" id="faq-6" hidden>
+              C'est l'un de nos cas d'usage prioritaires. Musiciens, ingénieurs du son, podcasteurs et audiophiles exigeants font partie des profils que nous ciblons en bêta. Si vous êtes professionnel du son, précisez-le dans le formulaire d'inscription.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════ WAITLIST ═══════════════════════════ -->
+    <section class="section section--waitlist" id="waitlist" aria-labelledby="wl-title">
+      <div class="container container--narrow">
+        <div class="waitlist__halo" aria-hidden="true"></div>
+        <div class="section__label">Accès prioritaire</div>
+        <h2 class="section__title" id="wl-title">Votre place vous attend.</h2>
+        <p class="section__intro">
+          Rejoignez les personnes qui façonnent SYNAPSEAR avant son lancement.
+          Gratuit, sans engagement, sans spam.
+        </p>
+
+        <!-- MODE SWITCH -->
+        <div class="form-mode-switch" role="group" aria-label="Mode d'inscription">
+          <button class="mode-btn mode-btn--active" id="btnModeA" aria-pressed="true" data-mode="A">
+            Formulaire intégré
+          </button>
+          <button class="mode-btn" id="btnModeB" aria-pressed="false" data-mode="B">
+            Ouvrir dans un nouvel onglet
+          </button>
+        </div>
+
+        <!-- MODE A : Formulaire intégré dans le site -->
+        <div class="waitlist__mode" id="modeA">
+          <div class="waitlist__form-wrapper">
+            <iframe
+              id="googleFormIframe"
+              src="COLLER_ICI_URL_GOOGLE_FORM_EMBED"
+              title="Formulaire d'inscription liste prioritaire SYNAPSEAR"
+              class="waitlist__iframe"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              loading="lazy"
+              allowfullscreen
+            >
+              Chargement…
+            </iframe>
+          </div>
+          <p class="waitlist__note">Le formulaire ci-dessus est hébergé par Google Forms. Remplacez l'URL dans <code>script.js</code>.</p>
+        </div>
+
+        <!-- MODE B : Bouton vers Google Forms -->
+        <div class="waitlist__mode hidden" id="modeB">
+          <div class="waitlist__cta-block">
+            <p class="waitlist__cta-desc">Vous serez redirigé vers Google Forms. Votre réponse sera enregistrée dans notre Google Sheets privé.</p>
+            <a
+              href="COLLER_ICI_URL_GOOGLE_FORM"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn--primary btn--xl"
+              id="waitlistBtn"
+            >
+              Rejoindre la liste prioritaire →
+            </a>
+            <p class="waitlist__privacy">Vos données (nom, email) sont uniquement utilisées pour vous notifier du lancement. Aucune revente. Aucun spam.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <span class="nav__logo">
+            <span class="logo-mark" aria-hidden="true"></span>
+            SYNAPSEAR
+          </span>
+          <p>Interface neurale auditive de nouvelle génération.</p>
+          <p class="footer__legal">Produit en développement. Toutes les performances mentionnées sont des objectifs à valider expérimentalement. SYNAPSEAR n'est pas un dispositif médical.</p>
+        </div>
+        <nav class="footer__links" aria-label="Liens du pied de page">
+          <a href="#probleme">Problème</a>
+          <a href="#solution">Solution</a>
+          <a href="#benefices">Bénéfices</a>
+          <a href="#comparaison">Comparaison</a>
+          <a href="#prix">Accès</a>
+          <a href="#faq">FAQ</a>
+          <a href="#waitlist">Liste prioritaire</a>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2025 SYNAPSEAR. Tous droits réservés.</p>
+        <p>Site statique · Hébergé sur GitHub Pages · Zéro cookie tiers</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
