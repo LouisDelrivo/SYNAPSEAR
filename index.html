@@ -7,14 +7,21 @@
   <meta name="theme-color" content="#0a0a0f" />
   <title>SYNAPSEAR — Entendre autrement</title>
   <link rel="stylesheet" href="styles.css" />
-  <!-- Polices premium via Google Fonts (CDN optionnel, fallback inclus) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    /* CORRECTION MENU MOBILE — force l'état correct au chargement */
+    @media (min-width: 769px) {
+      .nav__mobile { display: none !important; }
+      .nav__burger  { display: none !important; }
+    }
+    [hidden] { display: none !important; }
+  </style>
 </head>
 <body>
 
-  <!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+  <!-- NAV -->
   <header class="nav" id="nav" role="banner">
     <div class="nav__inner">
       <a href="#hero" class="nav__logo" aria-label="SYNAPSEAR — Accueil">
@@ -47,7 +54,7 @@
 
   <main>
 
-    <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+    <!-- HERO -->
     <section class="hero" id="hero" aria-labelledby="hero-title">
       <div class="hero__bg" aria-hidden="true">
         <div class="halo halo--1"></div>
@@ -123,7 +130,7 @@
       </a>
     </section>
 
-    <!-- ═══════════════════════════ PROBLÈME ═══════════════════════════ -->
+    <!-- PROBLÈME -->
     <section class="section section--problem" id="probleme" aria-labelledby="prob-title">
       <div class="container">
         <div class="section__label">Le problème</div>
@@ -135,7 +142,6 @@
           évolué. Elles amplifient, filtrent et compressent — sans jamais s'adapter
           à la biologie de l'utilisateur.
         </p>
-
         <div class="cards cards--3">
           <article class="card card--glow" aria-label="Fatigue auditive">
             <div class="card__icon" aria-hidden="true">
@@ -162,7 +168,7 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════ SOLUTION ═══════════════════════════ -->
+    <!-- SOLUTION -->
     <section class="section section--solution" id="solution" aria-labelledby="sol-title">
       <div class="container">
         <div class="split">
@@ -212,7 +218,7 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════ BÉNÉFICES ═══════════════════════════ -->
+    <!-- BÉNÉFICES -->
     <section class="section section--benefits" id="benefices" aria-labelledby="ben-title">
       <div class="container">
         <div class="section__label">Bénéfices</div>
@@ -221,9 +227,8 @@
           Les retours de nos 80 testeurs bêta internes convergent autour de quatre ressentis récurrents.
           Ces résultats sont subjectifs et devront être confirmés par une étude contrôlée.
         </p>
-
         <div class="benefits-grid">
-          <article class="benefit" aria-label="Bénéfice 1">
+          <article class="benefit">
             <div class="benefit__bar" style="--pct: 87%"></div>
             <div class="benefit__body">
               <div class="benefit__score">87 <span>%</span></div>
@@ -231,7 +236,7 @@
               <p>des testeurs ont rapporté une sensation de fatigue auditive moindre après 2 semaines d'utilisation.</p>
             </div>
           </article>
-          <article class="benefit" aria-label="Bénéfice 2">
+          <article class="benefit">
             <div class="benefit__bar" style="--pct: 94%"></div>
             <div class="benefit__body">
               <div class="benefit__score">94 <span>%</span></div>
@@ -239,7 +244,7 @@
               <p>estiment distinguer plus nettement la parole en environnement bruité. Données subjectives.</p>
             </div>
           </article>
-          <article class="benefit" aria-label="Bénéfice 3">
+          <article class="benefit">
             <div class="benefit__bar" style="--pct: 79%"></div>
             <div class="benefit__body">
               <div class="benefit__score">79 <span>%</span></div>
@@ -247,7 +252,7 @@
               <p>ont décrit une écoute musicale "plus immersive et détaillée" qu'avec leur équipement habituel.</p>
             </div>
           </article>
-          <article class="benefit" aria-label="Bénéfice 4">
+          <article class="benefit">
             <div class="benefit__bar" style="--pct: 91%"></div>
             <div class="benefit__body">
               <div class="benefit__score">91 <span>%</span></div>
@@ -262,12 +267,11 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════ COMPARAISON ═══════════════════════════ -->
+    <!-- COMPARAISON -->
     <section class="section section--compare" id="comparaison" aria-labelledby="comp-title">
       <div class="container">
         <div class="section__label">Comparaison</div>
         <h2 class="section__title" id="comp-title">Ce qui existe.<br/>Ce que nous construisons.</h2>
-
         <div class="compare-table" role="table" aria-label="Comparaison des technologies audio">
           <div class="compare-table__head" role="row">
             <div role="columnheader">Fonctionnalité</div>
@@ -289,10 +293,10 @@
               <div role="cell" class="col--highlight"><span class="icon--yes" aria-label="Oui">✓</span></div>
             </div>
             <div class="compare-row" role="row">
-              <div role="cell">Latence < 2 ms (objectif)</div>
+              <div role="cell">Latence &lt; 2 ms (objectif)</div>
               <div role="cell"><span class="icon--partial" aria-label="Partiel">◑</span></div>
               <div role="cell"><span class="icon--no" aria-label="Non">✕</span></div>
-              <div role="cell" class="col--highlight"><span class="icon--yes" aria-label="Oui (objectif)">✓</span></div>
+              <div role="cell" class="col--highlight"><span class="icon--yes" aria-label="Oui">✓</span></div>
             </div>
             <div class="compare-row" role="row">
               <div role="cell">Compatibilité universelle</div>
@@ -318,14 +322,13 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════ PRIX ═══════════════════════════ -->
+    <!-- PRIX -->
     <section class="section section--pricing" id="prix" aria-labelledby="price-title">
       <div class="container">
         <div class="section__label">Accès</div>
         <h2 class="section__title" id="price-title">Simple, transparent,<br/>sans surprise.</h2>
-
         <div class="pricing-grid">
-          <article class="pricing-card" aria-label="Offre Liste prioritaire">
+          <article class="pricing-card">
             <div class="pricing-card__badge">Disponible maintenant</div>
             <h3 class="pricing-card__name">Liste Prioritaire</h3>
             <div class="pricing-card__price">
@@ -341,7 +344,7 @@
             <a href="#waitlist" class="btn btn--primary" style="width:100%">Rejoindre maintenant</a>
           </article>
 
-          <article class="pricing-card pricing-card--featured" aria-label="Offre Fondateur">
+          <article class="pricing-card pricing-card--featured">
             <div class="pricing-card__badge pricing-card__badge--glow">Tarif fondateur · Prix indicatif</div>
             <h3 class="pricing-card__name">Accès Fondateur</h3>
             <div class="pricing-card__price">
@@ -361,7 +364,7 @@
             <p class="pricing-card__disclaimer">Prix indicatif. Confirmation à l'ouverture commerciale.</p>
           </article>
 
-          <article class="pricing-card" aria-label="Offre Studio">
+          <article class="pricing-card">
             <div class="pricing-card__badge">Prochainement</div>
             <h3 class="pricing-card__name">Studio Pro</h3>
             <div class="pricing-card__price">
@@ -380,12 +383,11 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════ FAQ ═══════════════════════════ -->
+    <!-- FAQ -->
     <section class="section section--faq" id="faq" aria-labelledby="faq-title">
       <div class="container container--narrow">
         <div class="section__label">FAQ</div>
         <h2 class="section__title" id="faq-title">Les questions<br/>que vous vous posez.</h2>
-
         <div class="faq-list" role="list">
 
           <div class="faq-item" role="listitem">
@@ -452,7 +454,7 @@
       </div>
     </section>
 
-    <!-- ═══════════════════════════ WAITLIST ═══════════════════════════ -->
+    <!-- WAITLIST -->
     <section class="section section--waitlist" id="waitlist" aria-labelledby="wl-title">
       <div class="container container--narrow">
         <div class="waitlist__halo" aria-hidden="true"></div>
@@ -463,7 +465,6 @@
           Gratuit, sans engagement, sans spam.
         </p>
 
-        <!-- MODE SWITCH -->
         <div class="form-mode-switch" role="group" aria-label="Mode d'inscription">
           <button class="mode-btn mode-btn--active" id="btnModeA" aria-pressed="true" data-mode="A">
             Formulaire intégré
@@ -473,12 +474,11 @@
           </button>
         </div>
 
-        <!-- MODE A : Formulaire intégré dans le site -->
         <div class="waitlist__mode" id="modeA">
           <div class="waitlist__form-wrapper">
             <iframe
               id="googleFormIframe"
-              src="COLLER_ICI_URL_GOOGLE_FORM_EMBED"
+              src="about:blank"
               title="Formulaire d'inscription liste prioritaire SYNAPSEAR"
               class="waitlist__iframe"
               frameborder="0"
@@ -486,19 +486,16 @@
               marginwidth="0"
               loading="lazy"
               allowfullscreen
-            >
-              Chargement…
-            </iframe>
+            >Chargement…</iframe>
           </div>
-          <p class="waitlist__note">Le formulaire ci-dessus est hébergé par Google Forms. Remplacez l'URL dans <code>script.js</code>.</p>
+          <p class="waitlist__note">Formulaire hébergé par Google Forms.</p>
         </div>
 
-        <!-- MODE B : Bouton vers Google Forms -->
         <div class="waitlist__mode hidden" id="modeB">
           <div class="waitlist__cta-block">
             <p class="waitlist__cta-desc">Vous serez redirigé vers Google Forms. Votre réponse sera enregistrée dans notre Google Sheets privé.</p>
             <a
-              href="COLLER_ICI_URL_GOOGLE_FORM"
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn--primary btn--xl"
@@ -515,7 +512,7 @@
 
   </main>
 
-  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <!-- FOOTER -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__inner">
