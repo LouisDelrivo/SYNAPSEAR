@@ -1234,3 +1234,34 @@ img, svg { display: block; max-width: 100%; }
 .reveal--delay-1 { transition-delay: .1s; }
 .reveal--delay-2 { transition-delay: .2s; }
 .reveal--delay-3 { transition-delay: .3s; }
+
+/* ── LOGO IMAGE ─────────────────────────────────────────────── */
+.nav__logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  filter: brightness(1);
+  transition: opacity .2s;
+}
+.nav__logo:hover .nav__logo-img { opacity: .85; }
+
+/* footer logo un peu plus petit */
+.footer__brand .nav__logo-img { height: 30px; }
+
+
+/* ── NAV MOBILE FIX ─────────────────────────────────────────── */
+.nav__mobile {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  background: rgba(8,8,14,.98);
+  border-bottom: 1px solid var(--c-border);
+  padding: 1rem 1.5rem 1.5rem;
+}
+.nav__mobile.is-open { display: flex; }
+
+@media (min-width: 769px) {
+  .nav__mobile { display: none !important; }
+  .nav__burger  { display: none !important; }
+}
