@@ -11,10 +11,10 @@
 */
 
 const CONFIG = {
-  // URL du bouton (mode B) → ex: "https://forms.gle/XXXXXXXXXXXX"
+  // URL du bouton (mode B)
   FORM_URL: "https://docs.google.com/forms/d/e/1FAIpQLSfdcjs-vcl4lns1d9nKIWcSpqJsSqdVl2EHe9cOaYcmxTXUag/viewform",
 
-  // URL embed de l'iframe (mode A) → ex: "https://docs.google.com/forms/d/.../viewform?embedded=true"
+  // URL embed de l'iframe (mode A)
   FORM_EMBED_URL: "https://docs.google.com/forms/d/e/1FAIpQLSfdcjs-vcl4lns1d9nKIWcSpqJsSqdVl2EHe9cOaYcmxTXUag/viewform?embedded=true",
 };
 
@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initRevealObserver();
   initWaveform();
 
-  // Canvas neural uniquement si pas prefers-reduced-motion
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!reducedMotion) {
     initNeuralCanvas();
@@ -41,13 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
    1. APPLY FORM URLS
 ════════════════════════════════════════════════ */
 function applyFormUrls() {
-  // Bouton mode B
   const waitlistBtn = document.getElementById("waitlistBtn");
   if (waitlistBtn && CONFIG.FORM_URL !== "COLLER_ICI_URL_GOOGLE_FORM") {
     waitlistBtn.href = CONFIG.FORM_URL;
   }
 
-  // Iframe mode A
   const iframe = document.getElementById("googleFormIframe");
   if (iframe && CONFIG.FORM_EMBED_URL !== "COLLER_ICI_URL_GOOGLE_FORM_EMBED") {
     iframe.src = CONFIG.FORM_EMBED_URL;
@@ -82,14 +79,12 @@ function initNav() {
     }
   };
 
-  // Smooth scroll pour tous les liens d'ancre internes
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", (e) => {
       const target = document.querySelector(anchor.getAttribute("href"));
       if (!target) return;
       e.preventDefault();
 
-      // Fermer le menu mobile AVANT le scroll
       closeMobileMenu();
 
       const navH = nav.offsetHeight + 8;
@@ -99,7 +94,6 @@ function initNav() {
     });
   });
 
-  // Fermer aussi si on clique en dehors du menu
   document.addEventListener("click", (e) => {
     const mobileMenu = document.getElementById("mobile-menu");
     const burger = document.querySelector(".nav__burger");
@@ -122,6 +116,17 @@ function initMobileMenu() {
   const mobileMenu = document.getElementById("mobile-menu");
   if (!burger || !mobileMenu) return;
 
+  // Forcer la fermeture sur desktop au chargement et au resize
+  const checkDesktop = () => {
+    if (window.innerWidth > 768) {
+      mobileMenu.hidden = true;
+      burger.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+  };
+  window.addEventListener("resize", checkDesktop, { passive: true });
+  checkDesktop();
+
   burger.addEventListener("click", () => {
     const isOpen = !mobileMenu.hidden;
     mobileMenu.hidden = isOpen;
@@ -143,7 +148,6 @@ function initFAQ() {
       const answer = document.getElementById(answerId);
       if (!answer) return;
 
-      // Fermer les autres
       buttons.forEach((b) => {
         if (b !== btn) {
           b.setAttribute("aria-expanded", "false");
@@ -192,20 +196,17 @@ function initModeSwitch() {
    6. REVEAL ON SCROLL
 ════════════════════════════════════════════════ */
 function initRevealObserver() {
-  // Ajouter la classe reveal aux éléments cibles
   const targets = document.querySelectorAll(
     ".card, .pillar, .benefit, .pricing-card, .compare-table, .faq-item, .split__visual, .split__text, .hero__stats .stat"
   );
 
   targets.forEach((el, i) => {
     el.classList.add("reveal");
-    // Décalage progressif par groupe de 3
     const delay = (i % 3) * 0.1;
     el.style.transitionDelay = `${delay}s`;
   });
 
   if (!("IntersectionObserver" in window)) {
-    // Fallback : tout montrer
     targets.forEach((el) => el.classList.add("visible"));
     return;
   }
@@ -226,7 +227,7 @@ function initRevealObserver() {
 }
 
 /* ════════════════════════════════════════════════
-   7. WAVEFORM ANIMÉE (barre générée en JS)
+   7. WAVEFORM ANIMÉE
 ════════════════════════════════════════════════ */
 function initWaveform() {
   const container = document.getElementById("waveformBars");
@@ -238,7 +239,6 @@ function initWaveform() {
   for (let i = 0; i < barCount; i++) {
     const bar = document.createElement("div");
     bar.className = "waveform__bar";
-    // Profil de hauteur : pic au centre, chute aux extrémités
     const pos = i / barCount;
     const baseH = Math.sin(pos * Math.PI) * 0.7 + 0.15;
     bar.style.height = `${Math.round(baseH * 80)}px`;
@@ -251,7 +251,7 @@ function initWaveform() {
 }
 
 /* ════════════════════════════════════════════════
-   8. CANVAS NEURAL (connexions animées)
+   8. CANVAS NEURAL
 ════════════════════════════════════════════════ */
 function initNeuralCanvas() {
   const canvas = document.getElementById("neuralCanvas");
@@ -270,7 +270,6 @@ function initNeuralCanvas() {
 
   window.addEventListener("resize", resize, { passive: true });
 
-  // Créer les nœuds
   for (let i = 0; i < NODE_COUNT; i++) {
     nodes.push({
       x: Math.random() * canvas.width,
@@ -286,7 +285,6 @@ function initNeuralCanvas() {
   const draw = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Déplacer les nœuds
     nodes.forEach((n) => {
       n.x += n.vx;
       n.y += n.vy;
@@ -294,7 +292,6 @@ function initNeuralCanvas() {
       if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
     });
 
-    // Dessiner les connexions
     for (let i = 0; i < nodes.length; i++) {
       for (let j = i + 1; j < nodes.length; j++) {
         const dx = nodes[i].x - nodes[j].x;
@@ -312,7 +309,6 @@ function initNeuralCanvas() {
       }
     }
 
-    // Dessiner les nœuds
     nodes.forEach((n) => {
       ctx.beginPath();
       ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
@@ -325,7 +321,6 @@ function initNeuralCanvas() {
 
   draw();
 
-  // Pause si l'onglet est caché (performance)
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) {
       cancelAnimationFrame(raf);
