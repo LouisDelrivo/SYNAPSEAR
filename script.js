@@ -99,7 +99,7 @@ function initNav() {
     const burger = document.querySelector(".nav__burger");
     if (
       mobileMenu &&
-      !mobileMenu.hidden &&
+      mobileMenu.classList.contains("is-open") &&
       !mobileMenu.contains(e.target) &&
       !burger.contains(e.target)
     ) {
