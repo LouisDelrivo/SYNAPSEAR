@@ -269,12 +269,15 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .nav__mobile {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 0;
   background: rgba(8,8,14,.98);
   border-bottom: 1px solid var(--c-border);
   padding: 1rem 1.5rem 1.5rem;
+}
+.nav__mobile.is-open {
+  display: flex;
 }
 .nav__mobile a {
   color: var(--c-text-muted);
@@ -299,6 +302,11 @@ img, svg { display: block; max-width: 100%; }
 @media (max-width: 768px) {
   .nav__links { display: none; }
   .nav__burger { display: flex; }
+}
+
+@media (min-width: 769px) {
+  .nav__mobile { display: none !important; }
+  .nav__burger  { display: none !important; }
 }
 
 /* ═══════════════════════════════════════════════════════════════
