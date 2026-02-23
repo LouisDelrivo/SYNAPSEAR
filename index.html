@@ -11,7 +11,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
   <style>
-    /* CORRECTION MENU MOBILE — force l'état correct au chargement */
     @media (min-width: 769px) {
       .nav__mobile { display: none !important; }
       .nav__burger  { display: none !important; }
@@ -25,8 +24,7 @@
   <header class="nav" id="nav" role="banner">
     <div class="nav__inner">
       <a href="#hero" class="nav__logo" aria-label="SYNAPSEAR — Accueil">
-        <span class="logo-mark" aria-hidden="true"></span>
-        SYNAPSEAR
+        <img src="assets/logo.png" alt="SYNAPSEAR" class="nav__logo-img" />
       </a>
       <nav aria-label="Navigation principale">
         <ul class="nav__links">
@@ -41,7 +39,7 @@
         <span></span><span></span><span></span>
       </button>
     </div>
-    <div class="nav__mobile" id="mobile-menu" hidden>
+    <div class="nav__mobile" id="mobile-menu">
       <a href="#probleme">Problème</a>
       <a href="#solution">Solution</a>
       <a href="#benefices">Bénéfices</a>
@@ -197,7 +195,6 @@
             </div>
           </div>
         </div>
-
         <div class="pillars">
           <div class="pillar">
             <span class="pillar__num">01</span>
@@ -282,39 +279,39 @@
           <div class="compare-table__body">
             <div class="compare-row" role="row">
               <div role="cell">Profil auditif personnalisé</div>
-              <div role="cell"><span class="icon--no" aria-label="Non">✕</span></div>
-              <div role="cell"><span class="icon--partial" aria-label="Partiel">◑</span></div>
-              <div role="cell" class="col--highlight"><span class="icon--yes" aria-label="Oui">✓</span></div>
+              <div role="cell"><span class="icon--no">✕</span></div>
+              <div role="cell"><span class="icon--partial">◑</span></div>
+              <div role="cell" class="col--highlight"><span class="icon--yes">✓</span></div>
             </div>
             <div class="compare-row" role="row">
               <div role="cell">Apprentissage continu</div>
-              <div role="cell"><span class="icon--no" aria-label="Non">✕</span></div>
-              <div role="cell"><span class="icon--no" aria-label="Non">✕</span></div>
-              <div role="cell" class="col--highlight"><span class="icon--yes" aria-label="Oui">✓</span></div>
+              <div role="cell"><span class="icon--no">✕</span></div>
+              <div role="cell"><span class="icon--no">✕</span></div>
+              <div role="cell" class="col--highlight"><span class="icon--yes">✓</span></div>
             </div>
             <div class="compare-row" role="row">
               <div role="cell">Latence &lt; 2 ms (objectif)</div>
-              <div role="cell"><span class="icon--partial" aria-label="Partiel">◑</span></div>
-              <div role="cell"><span class="icon--no" aria-label="Non">✕</span></div>
-              <div role="cell" class="col--highlight"><span class="icon--yes" aria-label="Oui">✓</span></div>
+              <div role="cell"><span class="icon--partial">◑</span></div>
+              <div role="cell"><span class="icon--no">✕</span></div>
+              <div role="cell" class="col--highlight"><span class="icon--yes">✓</span></div>
             </div>
             <div class="compare-row" role="row">
               <div role="cell">Compatibilité universelle</div>
-              <div role="cell"><span class="icon--no" aria-label="Non">✕</span></div>
-              <div role="cell"><span class="icon--partial" aria-label="Partiel">◑</span></div>
-              <div role="cell" class="col--highlight"><span class="icon--yes" aria-label="Oui">✓</span></div>
+              <div role="cell"><span class="icon--no">✕</span></div>
+              <div role="cell"><span class="icon--partial">◑</span></div>
+              <div role="cell" class="col--highlight"><span class="icon--yes">✓</span></div>
             </div>
             <div class="compare-row" role="row">
               <div role="cell">Sans abonnement obligatoire</div>
-              <div role="cell"><span class="icon--yes" aria-label="Oui">✓</span></div>
-              <div role="cell"><span class="icon--no" aria-label="Non">✕</span></div>
-              <div role="cell" class="col--highlight"><span class="icon--yes" aria-label="Oui">✓</span></div>
+              <div role="cell"><span class="icon--yes">✓</span></div>
+              <div role="cell"><span class="icon--no">✕</span></div>
+              <div role="cell" class="col--highlight"><span class="icon--yes">✓</span></div>
             </div>
             <div class="compare-row" role="row">
               <div role="cell">Données stockées localement</div>
-              <div role="cell"><span class="icon--partial" aria-label="Partiel">◑</span></div>
-              <div role="cell"><span class="icon--no" aria-label="Non">✕</span></div>
-              <div role="cell" class="col--highlight"><span class="icon--yes" aria-label="Oui">✓</span></div>
+              <div role="cell"><span class="icon--partial">◑</span></div>
+              <div role="cell"><span class="icon--no">✕</span></div>
+              <div role="cell" class="col--highlight"><span class="icon--yes">✓</span></div>
             </div>
           </div>
         </div>
@@ -343,7 +340,6 @@
             </ul>
             <a href="#waitlist" class="btn btn--primary" style="width:100%">Rejoindre maintenant</a>
           </article>
-
           <article class="pricing-card pricing-card--featured">
             <div class="pricing-card__badge pricing-card__badge--glow">Tarif fondateur · Prix indicatif</div>
             <h3 class="pricing-card__name">Accès Fondateur</h3>
@@ -363,7 +359,6 @@
             <a href="#waitlist" class="btn btn--primary" style="width:100%">Réserver ma place</a>
             <p class="pricing-card__disclaimer">Prix indicatif. Confirmation à l'ouverture commerciale.</p>
           </article>
-
           <article class="pricing-card">
             <div class="pricing-card__badge">Prochainement</div>
             <h3 class="pricing-card__name">Studio Pro</h3>
@@ -389,7 +384,6 @@
         <div class="section__label">FAQ</div>
         <h2 class="section__title" id="faq-title">Les questions<br/>que vous vous posez.</h2>
         <div class="faq-list" role="list">
-
           <div class="faq-item" role="listitem">
             <button class="faq-item__q" aria-expanded="false" aria-controls="faq-1">
               <span>SYNAPSEAR fonctionne-t-il avec mes écouteurs actuels ?</span>
@@ -399,7 +393,6 @@
               Oui. SYNAPSEAR est conçu comme une couche intermédiaire universelle, compatible avec tout équipement audio à jack 3,5 mm ou Bluetooth. Il ne remplace pas vos écouteurs — il les améliore.
             </div>
           </div>
-
           <div class="faq-item" role="listitem">
             <button class="faq-item__q" aria-expanded="false" aria-controls="faq-2">
               <span>Mes données auditives sont-elles partagées ?</span>
@@ -409,7 +402,6 @@
               Non. Le profil auditif est stocké localement sur l'appareil. Aucune donnée biométrique ne transite sur nos serveurs sans votre consentement explicite. La confidentialité est une valeur fondamentale du projet.
             </div>
           </div>
-
           <div class="faq-item" role="listitem">
             <button class="faq-item__q" aria-expanded="false" aria-controls="faq-3">
               <span>Quand la bêta sera-t-elle disponible ?</span>
@@ -419,7 +411,6 @@
               Nous ciblons un accès bêta pour Q3 2025, réservé aux inscrits en liste prioritaire. Cette date est indicative et dépend de nos jalons de développement matériel et logiciel. Vous serez informés en priorité de tout changement.
             </div>
           </div>
-
           <div class="faq-item" role="listitem">
             <button class="faq-item__q" aria-expanded="false" aria-controls="faq-4">
               <span>Est-ce un produit médical ou audiologique ?</span>
@@ -429,7 +420,6 @@
               Non. SYNAPSEAR est un produit grand public de bien-être auditif. Il n'est pas destiné à diagnostiquer, traiter ou corriger une pathologie auditive. Pour tout trouble clinique, consultez un audiologiste ou ORL qualifié.
             </div>
           </div>
-
           <div class="faq-item" role="listitem">
             <button class="faq-item__q" aria-expanded="false" aria-controls="faq-5">
               <span>Puis-je annuler ma réservation fondateur ?</span>
@@ -439,7 +429,6 @@
               Oui, à tout moment avant la confirmation commerciale. L'inscription en liste prioritaire est entièrement gratuite et sans engagement. Le prépaiement fondateur, quand il ouvrira, inclura une période de rétractation complète.
             </div>
           </div>
-
           <div class="faq-item" role="listitem">
             <button class="faq-item__q" aria-expanded="false" aria-controls="faq-6">
               <span>SYNAPSEAR convient-il aux musiciens professionnels ?</span>
@@ -449,7 +438,6 @@
               C'est l'un de nos cas d'usage prioritaires. Musiciens, ingénieurs du son, podcasteurs et audiophiles exigeants font partie des profils que nous ciblons en bêta. Si vous êtes professionnel du son, précisez-le dans le formulaire d'inscription.
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -464,16 +452,10 @@
           Rejoignez les personnes qui façonnent SYNAPSEAR avant son lancement.
           Gratuit, sans engagement, sans spam.
         </p>
-
         <div class="form-mode-switch" role="group" aria-label="Mode d'inscription">
-          <button class="mode-btn mode-btn--active" id="btnModeA" aria-pressed="true" data-mode="A">
-            Formulaire intégré
-          </button>
-          <button class="mode-btn" id="btnModeB" aria-pressed="false" data-mode="B">
-            Ouvrir dans un nouvel onglet
-          </button>
+          <button class="mode-btn mode-btn--active" id="btnModeA" aria-pressed="true" data-mode="A">Formulaire intégré</button>
+          <button class="mode-btn" id="btnModeB" aria-pressed="false" data-mode="B">Ouvrir dans un nouvel onglet</button>
         </div>
-
         <div class="waitlist__mode" id="modeA">
           <div class="waitlist__form-wrapper">
             <iframe
@@ -490,23 +472,15 @@
           </div>
           <p class="waitlist__note">Formulaire hébergé par Google Forms.</p>
         </div>
-
         <div class="waitlist__mode hidden" id="modeB">
           <div class="waitlist__cta-block">
             <p class="waitlist__cta-desc">Vous serez redirigé vers Google Forms. Votre réponse sera enregistrée dans notre Google Sheets privé.</p>
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn--primary btn--xl"
-              id="waitlistBtn"
-            >
+            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--xl" id="waitlistBtn">
               Rejoindre la liste prioritaire →
             </a>
             <p class="waitlist__privacy">Vos données (nom, email) sont uniquement utilisées pour vous notifier du lancement. Aucune revente. Aucun spam.</p>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -518,8 +492,7 @@
       <div class="footer__inner">
         <div class="footer__brand">
           <span class="nav__logo">
-            <span class="logo-mark" aria-hidden="true"></span>
-            SYNAPSEAR
+            <img src="assets/logo.png" alt="SYNAPSEAR" class="nav__logo-img" />
           </span>
           <p>Interface neurale auditive de nouvelle génération.</p>
           <p class="footer__legal">Produit en développement. Toutes les performances mentionnées sont des objectifs à valider expérimentalement. SYNAPSEAR n'est pas un dispositif médical.</p>
