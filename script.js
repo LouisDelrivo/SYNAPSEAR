@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initModeSwitch();
   initRevealObserver();
   initWaveform();
+  initCountdown();
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!reducedMotion) {
@@ -364,4 +365,3 @@ function initCountdown() {
   setInterval(tick, 1000);
 }
 
-document.addEventListener('DOMContentLoaded', initCountdown);
