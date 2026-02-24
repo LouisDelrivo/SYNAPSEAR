@@ -1544,3 +1544,102 @@ img, svg { display: block; max-width: 100%; }
   color: var(--c-text-muted);
   line-height: 1.65;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   COUNTDOWN BAR
+═══════════════════════════════════════════════════════════════ */
+.countdown-bar {
+  background: rgba(8,8,14,.95);
+  border-bottom: 1px solid rgba(96,165,250,.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: .75rem clamp(1.25rem, 5vw, 3rem);
+  position: sticky;
+  top: 57px;
+  z-index: 90;
+}
+
+.countdown-bar__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.countdown-bar__label {
+  font-family: var(--f-display);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--c-text-dim);
+}
+
+.countdown-bar__timer {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 44px;
+}
+
+.countdown-num {
+  font-family: var(--f-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+  display: block;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-unit-label {
+  font-size: .6rem;
+  color: var(--c-text-dim);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+.countdown-sep {
+  font-family: var(--f-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: rgba(96,165,250,.3);
+  margin-bottom: 14px;
+}
+
+.countdown-bar__cta {
+  font-family: var(--f-display);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--c-blue);
+  text-decoration: none;
+  border: 1px solid rgba(96,165,250,.25);
+  padding: .35rem .9rem;
+  border-radius: 99px;
+  transition: background .2s, border-color .2s;
+  white-space: nowrap;
+}
+.countdown-bar__cta:hover {
+  background: rgba(96,165,250,.1);
+  border-color: rgba(96,165,250,.5);
+}
+
+@media (max-width: 480px) {
+  .countdown-bar__label { display: none; }
+  .countdown-bar__cta { display: none; }
+  .countdown-num { font-size: 1.1rem; }
+}
