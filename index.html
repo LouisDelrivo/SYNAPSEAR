@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
   <style>
     @media (min-width: 769px) {
       .nav__mobile { display: none !important; }
@@ -82,148 +82,73 @@
   <main>
 
     <!-- HERO -->
-    <!-- HERO DASHBOARD -->
-    <section class="hero hero--dashboard" id="hero" aria-labelledby="hero-title">
+    <section class="hero" id="hero" aria-labelledby="hero-title">
       <div class="hero__bg" aria-hidden="true">
         <div class="halo halo--1"></div>
         <div class="halo halo--2"></div>
+        <div class="halo halo--3"></div>
         <canvas class="neural-canvas" id="neuralCanvas" aria-hidden="true"></canvas>
       </div>
 
-      <div class="hero-dashboard">
-
-        <!-- LEFT COPY -->
-        <div class="hero-dash__copy">
-          <div class="hero__badge">
-            <span class="badge__dot" aria-hidden="true"></span>
-            <span class="mono-sm">SYNAPSEAR_v1.0 // focus_daemon</span>
+      <div class="hero__content">
+        <div class="hero__badge">
+          <span class="badge__dot" aria-hidden="true"></span>
+          Isoler le bruit ne suffit plus. Réparez votre focus.
+        </div>
+        <h1 class="hero__title" id="hero-title">
+          <span class="line line--1">L'audition</span>
+          <span class="line line--2">réinventée</span>
+          <span class="line line--3">au niveau neuronal.</span>
+        </h1>
+        <p class="hero__sub">
+          SYNAPSEAR est une interface d'écoute bio-adaptative qui apprend la cartographie
+          auditive unique de chaque utilisateur — pour restituer un son d'une précision
+          jusqu'ici réservée à la recherche clinique.
+        </p>
+        <p class="hero__disclaimer">
+          Objectifs produit en cours de validation expérimentale.
+        </p>
+        <div class="hero__actions">
+          <a href="#prix" class="btn btn--primary">Réserver mon accès fondateur</a>
+          <a href="#solution" class="btn btn--ghost">Découvrir →</a>
+        </div>
+        <div class="hero__stats" role="list">
+          <div class="stat" role="listitem">
+            <span class="stat__num">2 400</span>
+            <span class="stat__label">Personnes en liste d'attente</span>
           </div>
-          <h1 class="hero__title" id="hero-title">
-            Ne laissez pas une<br/>
-            <span class="grad-text">notification crasher</span><br/>
-            votre système cognitif.
-          </h1>
-          <p class="hero__sub">
-            Vos serveurs ont Datadog.<br/>
-            Votre cerveau n'avait rien — <strong>jusqu'ici.</strong>
-          </p>
-          <div class="hero__actions">
-            <a href="#prix" class="btn btn--primary">Réserver mon accès →</a>
-            <a href="#solution" class="btn btn--ghost">Comment ça marche</a>
+          <div class="stat__sep" aria-hidden="true"></div>
+          <div class="stat" role="listitem">
+            <span class="stat__num">12</span>
+            <span class="stat__label">Pays représentés</span>
           </div>
-          <div class="hero__stats" role="list">
-            <div class="stat" role="listitem">
-              <span class="stat__num">−43%</span>
-              <span class="stat__label">temps de reconcentration</span>
-            </div>
-            <div class="stat__sep" aria-hidden="true"></div>
-            <div class="stat" role="listitem">
-              <span class="stat__num">65</span>
-              <span class="stat__label">fondateurs</span>
-            </div>
-            <div class="stat__sep" aria-hidden="true"></div>
-            <div class="stat" role="listitem">
-              <span class="stat__num">23 min</span>
-              <span class="stat__label">économisées / interruption</span>
-            </div>
+          <div class="stat__sep" aria-hidden="true"></div>
+          <div class="stat" role="listitem">
+            <span class="stat__num">Q3 2026</span>
+            <span class="stat__label">Lancement bêta prévu</span>
           </div>
         </div>
+      </div>
 
-        <!-- RIGHT DASHBOARD -->
-        <div class="dash" id="cogDash" role="img" aria-label="Dashboard cognitif SYNAPSEAR animé">
-
-          <!-- Title bar -->
-          <div class="dash__titlebar">
-            <div class="dash__dots">
-              <span style="background:#f87171"></span>
-              <span style="background:#fbbf24"></span>
-              <span style="background:#34d399"></span>
-            </div>
-            <span class="dash__filename mono-sm">synapsear — cognitive_monitor.exe</span>
-            <div class="dash__status">
-              <span class="dash__status-dot" id="dashStatusDot"></span>
-              <span class="dash__status-label mono-sm" id="dashStatusLabel">NOMINAL</span>
-            </div>
-          </div>
-
-          <!-- Metrics -->
-          <div class="dash__metrics">
-            <div class="dash__metric">
-              <div class="dash__metric-key mono-sm">FOCUS_SCORE</div>
-              <div class="dash__metric-val mono-sm" id="metricFocus">94/100</div>
-            </div>
-            <div class="dash__metric">
-              <div class="dash__metric-key mono-sm">INTERRUPTIONS</div>
-              <div class="dash__metric-val mono-sm" style="color:#fbbf24">14 today</div>
-            </div>
-            <div class="dash__metric">
-              <div class="dash__metric-key mono-sm">DEEP_WORK</div>
-              <div class="dash__metric-val mono-sm" style="color:#a78bfa">2h 34m</div>
-            </div>
-            <div class="dash__metric">
-              <div class="dash__metric-key mono-sm">DAEMON</div>
-              <div class="dash__metric-val mono-sm" id="metricDaemon" style="color:#33335a">STANDBY</div>
-            </div>
-          </div>
-
-          <!-- Chart -->
-          <div class="dash__chart-wrap">
-            <div class="dash__chart-label mono-sm">COGNITIVE_SIGNAL // real-time · 1s resolution</div>
-            <svg class="dash__svg" id="dashSvg" viewBox="0 0 600 130" preserveAspectRatio="none">
+      <div class="hero__visual" aria-hidden="true">
+        <div class="device">
+          <div class="device__ring device__ring--1"></div>
+          <div class="device__ring device__ring--2"></div>
+          <div class="device__ring device__ring--3"></div>
+          <div class="device__core">
+            <div class="device__pulse"></div>
+            <svg class="device__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="24" cy="24" r="10" stroke="url(#iconGrad)" stroke-width="1.5"/>
+              <path d="M24 8 C24 8, 36 14, 36 24 C36 34, 24 40, 24 40 C24 40, 12 34, 12 24 C12 14, 24 8, 24 8Z" stroke="url(#iconGrad)" stroke-width="1" stroke-dasharray="3 3" fill="none"/>
+              <circle cx="24" cy="24" r="3" fill="url(#iconGrad)"/>
               <defs>
-                <linearGradient id="fg" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#e2e8ff" stop-opacity="0.12"/>
-                  <stop offset="100%" stop-color="#e2e8ff" stop-opacity="0"/>
+                <linearGradient id="iconGrad" x1="12" y1="8" x2="36" y2="40" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#60a5fa"/>
+                  <stop offset="100%" stop-color="#a78bfa"/>
                 </linearGradient>
-                <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.22"/>
-                  <stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/>
-                </linearGradient>
-                <filter id="glow">
-                  <feGaussianBlur stdDeviation="2.5" result="b"/>
-                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
               </defs>
-              <!-- grid -->
-              <line x1="0" y1="32" x2="600" y2="32" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
-              <line x1="0" y1="65" x2="600" y2="65" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
-              <line x1="0" y1="97" x2="600" y2="97" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
-              <line x1="150" y1="0" x2="150" y2="130" stroke="rgba(255,255,255,.03)" stroke-width="1"/>
-              <line x1="300" y1="0" x2="300" y2="130" stroke="rgba(255,255,255,.03)" stroke-width="1"/>
-              <line x1="450" y1="0" x2="450" y2="130" stroke="rgba(255,255,255,.03)" stroke-width="1"/>
-              <!-- synapsear area + line -->
-              <path id="synapArea" d="" fill="url(#sg)"/>
-              <path id="synapLine" d="" fill="none" stroke="#60a5fa" stroke-width="2" filter="url(#glow)"/>
-              <!-- focus area + line -->
-              <path id="focusArea" d="" fill="url(#fg)"/>
-              <path id="focusLine" d="" fill="none" stroke="#e2e8ff" stroke-width="1.5"/>
-              <!-- warning marker -->
-              <g id="warnMarker" style="display:none">
-                <line x1="408" y1="0" x2="408" y2="130" stroke="#f87171" stroke-width="1" stroke-dasharray="3 3" opacity=".6"/>
-                <rect x="402" y="4" width="14" height="14" rx="2" fill="#f87171"/>
-                <text x="407" y="14" font-size="9" fill="#07070e" font-weight="bold" font-family="monospace">!</text>
-              </g>
             </svg>
-            <!-- Legend -->
-            <div class="dash__legend">
-              <div class="dash__legend-item">
-                <span class="dash__legend-line" style="background:#e2e8ff"></span>
-                <span class="mono-sm">FOCUS_SIGNAL</span>
-              </div>
-              <div class="dash__legend-item">
-                <span class="dash__legend-line" style="background:#60a5fa"></span>
-                <span class="mono-sm">SYNAPSEAR_DAEMON</span>
-              </div>
-            </div>
           </div>
-
-          <!-- Log terminal -->
-          <div class="dash__log" id="dashLog">
-            <div class="dash__log-header mono-sm">// SYSTEM LOG ──────────────────────</div>
-            <div id="dashLogLines"></div>
-            <span class="dash__cursor mono-sm">▋</span>
-          </div>
-
         </div>
       </div>
 
