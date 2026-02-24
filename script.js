@@ -329,3 +329,39 @@ function initNeuralCanvas() {
     }
   });
 }
+
+/* ════════════════════════════════════════════════
+   9. COUNTDOWN
+════════════════════════════════════════════════ */
+function initCountdown() {
+  const target = new Date('2026-10-23T00:00:00').getTime();
+
+  const days    = document.getElementById('cd-days');
+  const hours   = document.getElementById('cd-hours');
+  const minutes = document.getElementById('cd-minutes');
+  const seconds = document.getElementById('cd-seconds');
+
+  if (!days) return;
+
+  const pad = n => String(n).padStart(2, '0');
+
+  const tick = () => {
+    const now  = Date.now();
+    const diff = target - now;
+
+    if (diff <= 0) {
+      days.textContent = hours.textContent = minutes.textContent = seconds.textContent = '00';
+      return;
+    }
+
+    days.textContent    = pad(Math.floor(diff / 86400000));
+    hours.textContent   = pad(Math.floor((diff % 86400000) / 3600000));
+    minutes.textContent = pad(Math.floor((diff % 3600000)  / 60000));
+    seconds.textContent = pad(Math.floor((diff % 60000)    / 1000));
+  };
+
+  tick();
+  setInterval(tick, 1000);
+}
+
+document.addEventListener('DOMContentLoaded', initCountdown);
