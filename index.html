@@ -66,6 +66,19 @@
   </header>
 
 
+
+  <!-- COUNTDOWN BAR -->
+  <div class="countdown-bar" role="region" aria-label="Compte à rebours lancement">
+    <span class="countdown-bar__label">Lancement · 23 oct. 2026</span>
+    <div class="countdown-bar__timer">
+      <span id="cd-days">--</span><span class="countdown-bar__sep">j</span>
+      <span id="cd-hours">--</span><span class="countdown-bar__sep">h</span>
+      <span id="cd-minutes">--</span><span class="countdown-bar__sep">m</span>
+      <span id="cd-seconds">--</span><span class="countdown-bar__sep">s</span>
+    </div>
+    <a href="#waitlist" class="countdown-bar__cta">Réserver →</a>
+  </div>
+
   <main>
 
     <!-- HERO -->
@@ -117,31 +130,25 @@
         </div>
       </div>
 
-      <div class="hero__visual">
-        <div class="hero__countdown" role="region" aria-label="Compte à rebours lancement">
-          <div class="hero__countdown-label">Lancement officiel · 23 octobre 2026</div>
-          <div class="hero__countdown-timer">
-            <div class="cd-block">
-              <span class="cd-num" id="cd-days">00</span>
-              <span class="cd-unit">Jours</span>
-            </div>
-            <span class="cd-sep" aria-hidden="true">:</span>
-            <div class="cd-block">
-              <span class="cd-num" id="cd-hours">00</span>
-              <span class="cd-unit">Heures</span>
-            </div>
-            <span class="cd-sep" aria-hidden="true">:</span>
-            <div class="cd-block">
-              <span class="cd-num" id="cd-minutes">00</span>
-              <span class="cd-unit">Minutes</span>
-            </div>
-            <span class="cd-sep" aria-hidden="true">:</span>
-            <div class="cd-block">
-              <span class="cd-num" id="cd-seconds">00</span>
-              <span class="cd-unit">Secondes</span>
-            </div>
+      <div class="hero__visual" aria-hidden="true">
+        <div class="device">
+          <div class="device__ring device__ring--1"></div>
+          <div class="device__ring device__ring--2"></div>
+          <div class="device__ring device__ring--3"></div>
+          <div class="device__core">
+            <div class="device__pulse"></div>
+            <svg class="device__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="24" cy="24" r="10" stroke="url(#iconGrad)" stroke-width="1.5"/>
+              <path d="M24 8 C24 8, 36 14, 36 24 C36 34, 24 40, 24 40 C24 40, 12 34, 12 24 C12 14, 24 8, 24 8Z" stroke="url(#iconGrad)" stroke-width="1" stroke-dasharray="3 3" fill="none"/>
+              <circle cx="24" cy="24" r="3" fill="url(#iconGrad)"/>
+              <defs>
+                <linearGradient id="iconGrad" x1="12" y1="8" x2="36" y2="40" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#60a5fa"/>
+                  <stop offset="100%" stop-color="#a78bfa"/>
+                </linearGradient>
+              </defs>
+            </svg>
           </div>
-          <a href="#waitlist" class="btn btn--primary hero__countdown-btn">Réserver mon accès →</a>
         </div>
       </div>
 
