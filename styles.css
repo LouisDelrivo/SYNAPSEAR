@@ -1768,3 +1768,78 @@ img, svg { display: block; max-width: 100%; }
 }
 
 
+
+/* ═══════════════════════════════════════════════════════════════
+   COUNTDOWN BAR
+═══════════════════════════════════════════════════════════════ */
+.countdown-bar {
+  position: sticky;
+  top: 57px;
+  z-index: 90;
+  background: rgba(8,8,14,.97);
+  border-bottom: 1px solid rgba(96,165,250,.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: .5rem clamp(1rem, 4vw, 3rem);
+  flex-wrap: wrap;
+}
+
+.countdown-bar__label {
+  font-family: var(--f-display);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--c-text-dim);
+}
+
+.countdown-bar__timer {
+  display: flex;
+  align-items: baseline;
+  gap: .35rem;
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+  font-variant-numeric: tabular-nums;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.countdown-bar__sep {
+  font-size: .65rem;
+  font-weight: 600;
+  color: var(--c-text-dim) !important;
+  -webkit-text-fill-color: var(--c-text-dim);
+  letter-spacing: .06em;
+  margin-right: .2rem;
+}
+
+.countdown-bar__cta {
+  font-family: var(--f-display);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--c-blue);
+  text-decoration: none;
+  border: 1px solid rgba(96,165,250,.2);
+  padding: .3rem .8rem;
+  border-radius: 99px;
+  transition: background .2s, border-color .2s;
+  white-space: nowrap;
+}
+.countdown-bar__cta:hover {
+  background: rgba(96,165,250,.08);
+  border-color: rgba(96,165,250,.4);
+}
+
+@media (max-width: 480px) {
+  .countdown-bar__label { display: none; }
+  .countdown-bar__cta { display: none; }
+}
+
