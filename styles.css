@@ -1686,14 +1686,14 @@ img, svg { display: block; max-width: 100%; }
 
 .cd-num {
   font-family: var(--f-display);
-  font-size: 2.8rem;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
   font-weight: 800;
   color: #fff;
   background: var(--c-surface);
   border: 1px solid rgba(96,165,250,.2);
   border-radius: .75rem;
-  width: 80px;
-  height: 80px;
+  width: clamp(64px, 7vw, 88px);
+  height: clamp(64px, 7vw, 88px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1701,6 +1701,7 @@ img, svg { display: block; max-width: 100%; }
   box-shadow: 0 0 24px rgba(96,165,250,.1), inset 0 1px 0 rgba(255,255,255,.05);
   position: relative;
   overflow: hidden;
+  padding: 0 .5rem;
 }
 
 .cd-num::after {
@@ -1750,7 +1751,7 @@ img, svg { display: block; max-width: 100%; }
    PROTO IMAGE
 ═══════════════════════════════════════════════════════════════ */
 .proto__wrapper {
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid rgba(96,165,250,.15);
@@ -1764,18 +1765,4 @@ img, svg { display: block; max-width: 100%; }
   object-fit: cover;
 }
 
-.proto__caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: .75rem 1rem;
-  background: linear-gradient(to top, rgba(8,8,14,.9), transparent);
-  font-size: .72rem;
-  font-family: var(--f-display);
-  font-weight: 600;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--c-text-dim);
-  text-align: center;
-}
+
